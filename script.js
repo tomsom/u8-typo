@@ -7,7 +7,7 @@ const image = [];
 const station_links = [];
 
 //numnber of the current slide
-var slideIndex = 13;
+var slideIndex = 1;
 
 // contains all station names
 const station_list_names = [
