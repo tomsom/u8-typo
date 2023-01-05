@@ -1,11 +1,11 @@
 # To Do:
 ## Priority: High
 - change descriptive text
-- fix key spamming issues
+- landing page and end page
 
 ## Priority: Low
 - js formatting
-- landing page and end page
 - design improvements
 - font
-- 
+- make link/button spamming possible
+- mobile compatibility

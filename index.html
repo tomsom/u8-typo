@@ -41,10 +41,18 @@
         <hr>
     </div>
 
-    <div class="img" id="slideshow">
-        <!-- <img class="img__overlay" src="img/metro_overlay.svg" alt=""> -->
-
+    <div class="slideshow_holder">
+        <div id="slideshow"></div>
+        <!-- <img id="ol" src="img/metro_overlay.svg" alt=""> -->
+        <div class="sl__btn_left" onclick="slideBy(-1)">
+            <img class="sl__btn_img" src="img/arrow.svg" alt="">
+        </div>
+        <div class="sl__btn_right" onclick="slideBy(1)">
+            <img class="sl__btn_img" src="img/arrow.svg" alt="">
+        </div>
     </div>
+
+
     <div class="bottom">
         <img class="img_u8 bottom__logo" src="img/u8_logo.svg" alt="U8">
 
