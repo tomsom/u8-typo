@@ -9,7 +9,40 @@
     <link rel="icon" type="image/x-icon" href="img/favicon.png">
     <script src="script.js" defer></script>
 </head>
-<body>
+<body class="ylw_bg">
+    <div id="canvas">
+    <section class="landing_page">
+        <div class="lp__sidebar">
+            <img class="img_u8 lp__sb_logo" src="img/u8_logo.svg" alt="U8" >
+            <ul>
+                <li>
+                    <p>Type and See</p>
+                </li>
+                <li>
+                    <p>WS 2022/23</p>
+                </li>
+                <li>
+                    <p>Betreuerin:</p>
+                    <p>Christina Poth</p>
+                </li>
+                <li>
+                    <p>Von</p>
+                    <p>Ragnar und Tom</p>
+                </li>
+                <li>FH Potsdam</li>
+            </ul>
+        </div>
+        <div class="lp__content">
+            <h1>u8-type</h1>
+            <h2>Hello typographie dies das u8 schrift geometrisch, grotestk und so weiter.. weißt bescheid.. keine serifen und so also serifenlos und auch nicht slab, weil sonst ja auch serifen wie gesagt sans serif und ohne bzw. mit wenig dünn werden an einigen stellen, wie heißt das nochmal? Naja anyway auf jeden Fall zu sehen in U-Bahn stationen der linie acht, über dem gleis, neben der Werbung, soso also jz mal los: entweder da klicken, oder hebel drücken oder pfeiltaste nach rechts. Lets go! Zurücktreten bitte!</h2>
+            <a id="start" class="start_link" onclick="slideCanvas(1)">Start</a>
+        </div>
+        <div class="lp__image">
+            <img id="img_metro" class="lp__img_metro" src="img/metro.svg" alt="">
+        </div>
+    </section>
+    <section class="station_slideshow">
+
     <div class="schedule">
         <ul id="station_list">
             <!-- <li>Hermannstraße</li>
@@ -54,11 +87,17 @@
 
 
     <div class="bottom">
-        <img class="img_u8 bottom__logo" src="img/u8_logo.svg" alt="U8">
+        <img class="img_u8 bottom__logo" src="img/u8_logo.svg" alt="U8" onclick="slideCanvas(0)">
 
         <div class="bottom__stationInfo">
             This station is just beautiful dont you think, so bright, nice and clean; subway stations are just awesome places to reside.
         </div>
     </div>
+    </section>
+
+    <section class="end_page">
+
+    </section>
+</div>
 </body>
 </html>

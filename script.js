@@ -9,6 +9,13 @@ const station_links = [];
 //numnber of the current slide
 var slideIndex = 1;
 
+// canvas
+var canvasIndex = 0;
+
+
+// dot scale factor
+let dsf = 1.4;
+let dsf_big = 2;
 
 // contains all station names
 const station_list_names = [
@@ -44,21 +51,60 @@ window.onload = function() {
   loadImages();
   addStationLinks();
   showSlide(1);
+  hover(document.getElementById("start"), document.getElementById("img_metro"), "scale_img_metro");
   // hmm better solution possible??
-  station_links[slideIndex-1].style.setProperty('--dot-scale-factor', '1.4');
+  station_links[slideIndex-1].style.setProperty('--dot-scale-factor', dsf_big);
 };
+
+function hover(element, target, className){
+  element.addEventListener('mouseenter', e => target.classList.add(className));
+  element.addEventListener('mouseleave', e => {if (canvasIndex == 0) target.classList.remove(className)});
+}
 
 // keylistener
 document.addEventListener('keyup', (e) => {
   // slide further/to right
-  if (e.code === "ArrowRight" || e.code === "Space" || e.code === "Enter" || e.code === "KeyL" || e.code === "KeyD") {
+  if (e.code === "ArrowRight"
+  || e.code === "Space"
+  ||e.code === "Enter"
+  || e.code === "KeyL"
+  || e.code === "KeyD") {
     showSlide(slideIndex + 1);
   }
   // slide backwards/to left
-  else if (e.code === "ArrowLeft" || e.code === "Backspace" || e.code === "KeyA" || e.code === "KeyJ") {
+  else if (e.code === "ArrowLeft" 
+  || e.code === "Backspace" 
+  || e.code === "KeyA" 
+  || e.code === "KeyJ") {
     showSlide(slideIndex - 1);
   }
 });
+
+function slideCanvas(n) {
+  canvasIndex = n;
+  if (n != 1) {
+    document.body.classList.add("ylw_bg");
+    setTimeout(function() {
+      canvasTransition();
+      setTimeout(function() {
+        document.getElementById("img_metro").classList.remove("scale_img_metro");
+      }, 300);
+    }, 300);
+   
+
+  } else {
+    // document.getElementById("img_metro").classList.add("scale_img_metro");
+    setTimeout(function() {
+      canvasTransition();
+    }, 90);
+  }
+  function canvasTransition () {
+    var translation_length = n * 100;
+    var position = `translate(-${translation_length}vw,0)`;
+    canvas.style.transform = position;
+    showSlide(1);
+  }
+}
 
 function slideBy(n) {
   showSlide(slideIndex+n);
@@ -75,7 +121,7 @@ function loadImages() {
     img.classList.add("img__image");
     // add image source
     let img_number = i + 1;
-    img.src = "img/"+img_number+".JPG";
+    img.src = "img/"+img_number+".jpg";
     // create overlay image, add class and source
     var overlay = document.createElement("img");
     overlay.classList.add("img__overlay")
@@ -116,14 +162,19 @@ function addStationLinks() {
 }
 
 function showSlide(index) {
-
+  // do not execute if slideshow not visible
+  if (canvasIndex != 1) return;
 
   if (index > image.length) {
     // go to last/credit/about page?
+    slideCanvas(2);
+    return;
     slideIndex = image.length;
   }
   if (index < 1) {
     // go to first/landing page? 
+    console.log("get back");
+    slideCanvas(0);
     return;
     slideIndex = 1;
   }
@@ -146,7 +197,7 @@ function showSlide(index) {
     image[i].children.item(0).classList.remove("img__image_active");
     image[i].children.item(1).classList.remove("img__overlay_active");
     station_links[i].classList.remove("station_link_active");
-    station_links[i].style.setProperty('--dot-scale-factor', '1');
+    station_links[i].style.setProperty('--dot-scale-factor', dsf);
   }
 
   // II. instant changes
@@ -194,8 +245,8 @@ function showSlide(index) {
       var po_ne = difference / Math.abs(difference);
       console.log("Diff. dir " + po_ne);
 
-      station_links[current - (difference / Math.abs(difference))].style.setProperty('--dot-scale-factor', '1');
-      station_links[current].style.setProperty('--dot-scale-factor', '1.4');
+      station_links[current - (difference / Math.abs(difference))].style.setProperty('--dot-scale-factor', dsf);
+      station_links[current].style.setProperty('--dot-scale-factor', dsf_big);
     }, (transition_time / Math.abs(difference)) * Math.abs(i) );
   }
 
