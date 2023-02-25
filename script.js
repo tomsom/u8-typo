@@ -48,7 +48,7 @@ const station_list_names = [
 ];
 
 const station_descriptions = [
-  'Die ersten Pläne für den U-Bahnhof Hermannstraße gab es bereits 1910. Aus politischen und finanziellen Gründen wurde die Station erst 86 Jahre später eröffnet. Der U-Bahnhof ist von Felix Scholz, mit dem Thema "Großstadtdschungel" gestaltett',
+  'Die ersten Pläne für den U-Bahnhof Hermannstraße gab es bereits 1910. Aus politischen und finanziellen Gründen wurde die Station erst 86 Jahre später eröffnet. Der U-Bahnhof ist von Felix Scholz, mit dem Thema "Großstadtdschungel" gestaltet worden.',
   "Die hellgrünen Fliesen geben mit Absicht einen Unruhigen Eindruck. Die Station Leinestraße wurde vor der Hermannstraße eröffnet. Der schon fertige Teil des Tunnels in Richtung Hermannstraße diente als Luftschutzbunker im 2.WK. Wegen Kriegsschäden blieb der Bahnhof für einen Monat geschlossen.",
   "Der Bahnhof ist nach Hermann Boddin benannt. Er war ein Gemeindevorsteher und Bürgermeister von Rixdorf, dem heutigen Neukölln. Rixdorf hatte einen zweifelhaften Ruf, deshalb wollte Hermann Boddin, Rixdorf in Herrmannstadt umbenennen. Schlussendlich wurde es jedoch Neukölln.",
   "Die von den Architekten Alfred Grenander und Alfred Fehse entworfene Bahnstation, wurde 1927 eröffnet. ",
@@ -83,7 +83,7 @@ window.onload = function() {
   addStationLinks();
   showSlide(1);
   hover(document.getElementById("start"), document.getElementById("img_metro"), "scale_img_metro");
-  // hmm solution possible??
+  hover(document.getElementById("arrow_keys"), document.getElementById("img_metro"), "scale_img_metro");// hmm solution possible??
   station_links[2].style.setProperty('--dot-scale-factor', dsf_big);
 };
 

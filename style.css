@@ -168,7 +168,11 @@ h2 {
     border: solid var(--clr-foreground) 1.5px;
     border-radius: 4px;
     text-align: center;
+    transition: all .2s ease-in-out;
 }
+
+.key:not(.empty) {cursor: pointer;}
+.key:not(.empty):hover {background-color: var(--keypress-bg) !important;}
 
 .left {
     animation: keypress_left 4s 1s infinite;
