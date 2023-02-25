@@ -14,7 +14,7 @@
 <!-- LANDING PAGE -->
     <section class="landing_page">
         <div class="lp__sidebar">
-            <ul>
+            <!-- <ul>
                 <li>
                     <p>Type and See</p>
                 </li>
@@ -30,7 +30,8 @@
                     <p>Ragnar und Tom</p>
                 </li>
                 <li><p>FH Potsdam</p></li>
-            </ul>
+            </ul> -->
+            <p class="lp__info">Type and See / Prof. Christina Poth / WS2023/22 / Ragnar Wilczek und Tom Sommermann / FH Potsdam</p>
             <img class="img_u8 lp__sb_logo" src="img/u8_logo.svg" alt="U8" >
         </div>
         <div class="lp__content">
@@ -42,11 +43,19 @@
             <h2>
                 Navigiere mit den Pfeiltasten nach rechts um weiter- bzw. nach links um zurück zu fahren.
             </h2>
-            <a id="start" class="start_link" onclick="slideCanvas(1)">Zurücktreten bitte!</a>
+            <a id="start" class="start_link" onclick="slideCanvas(1, 1)">Zurücktreten bitte!</a>
+            <div class="arrow_keys">
+                <div class="key empty"></div>
+                <div class="key">&uarr; </div>
+                <div class="key empty"></div>
+                <div class="key left">&larr; </div>
+                <div class="key">&darr; </div>
+                <div class="key right">&rarr; </div>
+            </div>
             <!-- <img class="img_lever" src="/img/wireframe_lever.svg" alt=""> -->
         </div>
         <div class="lp__image">
-            <img id="img_metro" class="lp__img_metro" src="img/metro.svg"  alt="" onclick="slideCanvas(1)">
+            <img id="img_metro" class="lp__img_metro" src="img/metro.svg"  alt="" onclick="slideCanvas(1, 1)">
         </div>
     </section>
 <!-- SLIDESHOW SECTION -->
@@ -61,10 +70,8 @@
         <div id="slideshow"></div>
         <!-- <img id="ol" src="img/metro_overlay.svg" alt=""> -->
         <div class="sl__btn_left" onclick="slideBy(-1)">
-            <img class="sl__btn_img" src="img/arrow.svg" alt="">
         </div>
         <div class="sl__btn_right" onclick="slideBy(1)">
-            <img class="sl__btn_img" src="img/arrow.svg" alt="">
         </div>
     </div>
 
@@ -79,6 +86,22 @@
     </section>
 <!-- END PAGE -->
     <section class="end_page">
+        <div class="ep__image">
+            <img id="img_metro_back" class="ep__img_metro scale_img_metro" src="img/metro_back.svg"  alt="" onclick="document.getElementById('img_metro_back').classList.add('scale_img_metro'); slideCanvas(1, 24);">
+        </div>
+        <div class="ep__content">
+            <h1>Weitere Infos zur U8</h1>
+            <h2>
+                Die U8 durchquert Berlin in Nord-Süd-Richtung. Sie hat eine Streckenlänge von 18,1 Kilometern. Ursprünglich wurde sie als Hängebahn geplant, dieser Plan wurde verworfen. Einige Bahnhöfe boten im zweiten Weltkrieg Schutzraum für die Bevölkerung. Nach dem Mauerbau und der Teilung Berlins wurden die Ost-Berliner Bahnhöfe der U8 geschlossen und zu so genannten "Geisterbahnhöfen". Die U8 fuhr ohne Halt durch sechs Bahnhöfe .
+                Die U8 wurde in mehreren Phasen gebaut. Die Verlängerung der U8 unter das Märkische Viertel ist vorgesehen, doch die Realisierung zur Zeit nicht geplant.
+                Anton Koovit ist ein Schriftgestalter aus Estland. Er hat einige Schriften der U8 Stationsschilder analysiert und eine eigene Schriftart daraus erstellt. Die Aktuelle Unternehmensschrift der BVG, "FF Transit" wurde von Erik Spiekermann entworfen.
+            </h2>
+            <a id="start" class="start_link" onclick="window.location.reload()">Zurück zum Start</a>
+        </div>
+        <div class="ep__sidebar">
+            <p class="ep__info">Type and See / Prof. Christina Poth / WS2023/22 / Ragnar Wilczek und Tom Sommermann / FH Potsdam</p>
+
+        </div>
 
     </section>
 </div>

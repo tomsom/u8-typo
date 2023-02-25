@@ -102,7 +102,7 @@ document.addEventListener('keydown', (e) => {
   || e.code === "KeyD") {
     if (canvasIndex == 0) {
       document.getElementById("img_metro").classList.add("scale_img_metro");
-      slideCanvas(1);
+      slideCanvas(1, 1);
       return;
     }
     showSlide(slideIndex + 1);
@@ -112,13 +112,18 @@ document.addEventListener('keydown', (e) => {
   || e.code === "Backspace" 
   || e.code === "KeyA" 
   || e.code === "KeyJ") {
+    if (canvasIndex == 2) {
+      document.getElementById("img_metro_back").classList.add("scale_img_metro");
+      slideCanvas(1, 24);
+      return;
+    }
     showSlide(slideIndex - 1);
   }
 
   // started = true;
 });
 
-function slideCanvas(n) {
+function slideCanvas(n, slide) {
   canvasIndex = n;
   if (n != 1) {
     document.body.classList.add("ylw_bg");
@@ -126,6 +131,7 @@ function slideCanvas(n) {
       canvasTransition();
       setTimeout(function() {
         document.getElementById("img_metro").classList.remove("scale_img_metro");
+        document.getElementById("img_metro_back").classList.remove("scale_img_metro");
       }, 300);
     }, 300);
    
@@ -140,7 +146,7 @@ function slideCanvas(n) {
     var translation_length = n * 100;
     var position = `translate(-${translation_length}vw,0)`;
     canvas.style.transform = position;
-    showSlide(1);
+    showSlide(slide);
   }
 }
 
