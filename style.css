@@ -49,7 +49,7 @@ body {
     background-color: var(--u8-blue);
     -webkit-font-smoothing: antialiased;
     transition: all .6s ease-in-out;
-    font-family: KrubMedium, 'Times New Roman', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+    font-family: KrubMedium, 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
 }
 
 img,
@@ -117,7 +117,16 @@ h2 {
     font-weight: 300;
 }
 
+.lp__sidebar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: min-content;
+    color: var(--clr-foreground);
+}
+
 a.start_link {
+    margin-top: 1.2rem;
     display: block;
     width: 100%;
     font-size: 2rem;
@@ -130,13 +139,21 @@ a.start_link:where(:focus, :hover) {
     cursor: pointer;
 }
 
-.lp__img {
-    position: absolute;
-    top: 0;
-    right: 0;
+.lp__content {
+    display: flex;
+    flex-direction: column;
     height: 100vh;
-    width: min-content;
+    height: 100svh;
+
 }
+
+.img_lever {
+    margin-top: 2rem;
+    height: 20rem;
+    align-self: center;
+}
+
+
 
 .lp__img_metro {
     position: absolute;
@@ -159,6 +176,7 @@ a.start_link:where(:focus, :hover) {
     width: 100vw;
     height: var(--schedule-height);
     overflow: hidden;
+    color: var(--clr-foreground-secondary);
 }
 
 ul#station_list {
@@ -171,7 +189,7 @@ ul#station_list {
 }
 
 #station_list > li {
-    color:  var(--clr-foreground-secondary);
+    /* color:  var(--clr-foreground-secondary); */
     display: inline-block;
     max-width: 2.6rem;
     overflow: visible;
@@ -201,6 +219,8 @@ a.station_link::before {
 
 
 a.station_link:hover {
+    color: var(--clr-foreground);
+
     font-weight: bold;
     cursor: pointer;
 }
@@ -269,6 +289,7 @@ hr {
 }
 
 .img__image_active {
+    color: var(--clr-foreground);
     transform: scale(1.1);
 }
 
@@ -338,6 +359,7 @@ hr {
     height: 5em;
     border: solid  var(--clr-foreground) 4px;
     border-radius: .8em;
+    align-self: flex-start;
 }
 
 .bottom__logo {cursor: pointer;}

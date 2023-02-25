@@ -11,9 +11,9 @@
 </head>
 <body class="ylw_bg">
     <div id="canvas">
+<!-- LANDING PAGE -->
     <section class="landing_page">
         <div class="lp__sidebar">
-            <img class="img_u8 lp__sb_logo" src="img/u8_logo.svg" alt="U8" >
             <ul>
                 <li>
                     <p>Type and See</p>
@@ -23,54 +23,37 @@
                 </li>
                 <li>
                     <p>Betreuerin:</p>
-                    <p>Christina Poth</p>
+                    <p>Prof. Christina Poth</p>
                 </li>
                 <li>
                     <p>Von</p>
                     <p>Ragnar und Tom</p>
                 </li>
-                <li>FH Potsdam</li>
+                <li><p>FH Potsdam</p></li>
             </ul>
+            <img class="img_u8 lp__sb_logo" src="img/u8_logo.svg" alt="U8" >
         </div>
         <div class="lp__content">
             <h1>u8-type</h1>
-            <h2>Hello typographie dies das u8 schrift geometrisch, grotestk und so weiter.. weißt bescheid.. keine serifen und so also serifenlos und auch nicht slab, weil sonst ja auch serifen wie gesagt sans serif und ohne bzw. mit wenig dünn werden an einigen stellen, wie heißt das nochmal? Naja anyway auf jeden Fall zu sehen in U-Bahn stationen der linie acht, über dem gleis, neben der Werbung, soso also jz mal los: entweder da klicken, oder hebel drücken oder pfeiltaste nach rechts. Lets go! Zurücktreten bitte!</h2>
+            <h2>Die U8 durchquert Berlin in Nord-Süd-Richtung. Sie hat eine Streckenlänge von 18,1 Kilometern.
+                Ursprünglich wurde sie als Hängebahn geplant, dieser Plan wurde verworfen.
+                Einige Bahnhöfe boten im zweiten Weltkrieg Schutzraum für die Bevölkerung.
+                Nach dem Mauerbau und der Teilung Berlins wurden die Ost-Berliner Bahnhöfe der U8 geschlossen und zu so genannten "Geisterbahnhöfen". Die U8 fuhr ohne Halt durch sechs Bahnhöfe .
+                Die U8 wurde in mehreren Phasen gebaut und eine Erweiterung Richtung Norden ist geplant.
+                Das Schriftbild der Stationsnamen ähnelt sich überwiegend. Die meisten Schilder haben geometrisch konstruierte, serifenlose Schriftzeichen mit nahezu keinem Strichstärkekontrast. In allen Bahnhöfen gibt es ein Neues Stationsschild, mit der von Erik Spiekermann entworfenen Unternehmensschrift der BVG, „FF Transit“.
+            </h2>
             <a id="start" class="start_link" onclick="slideCanvas(1)">Start</a>
+            <img class="img_lever" src="/img/wireframe_lever.svg" alt="">
         </div>
         <div class="lp__image">
             <img id="img_metro" class="lp__img_metro" src="img/metro.svg" alt="">
         </div>
     </section>
+<!-- SLIDESHOW SECTION -->
     <section class="station_slideshow">
 
     <div class="schedule">
-        <ul id="station_list">
-            <!-- <li>Hermannstraße</li>
-            <li>Leinestraße</li>
-            <li>Boddinstraße</li>
-            <li>Hermannplatz</li>
-            <li>Schönleinstraße</li>
-            <li>Kottbusser Tor</li>
-            <li>Moritzplatz</li>
-            <li>Heinrich-Heine-Straße</li>
-            <li>Jannowitzbrücke</li>
-            <li>Alexanderplatz</li>
-            <li>Weinmeisterstraße</li>
-            <li>Rosenthaler Platz</li>
-            <li>Bernauer Straße</li>
-            <li>Voltastraße</li>
-            <li>Gesundbrunnen</li>
-            <li>Pankstraße</li>
-            <li>Osloer Straße</li>
-            <li>Franz-Neumann-Platz</li>
-            <li>Residenzstraße</li>
-            <li>Paracelsus-Bad</li>
-            <li>Lindauer Allee</li>
-            <li>Karl-Bonhoeffer-Nervenklinik</li>
-            <li>Rathaus Rienickendorf</li>
-            <li>Wittenau</li>
-            <hr> -->
-        </ul>
+        <ul id="station_list"><!-- handled by js  --></ul>
         <hr>
     </div>
 
@@ -89,12 +72,12 @@
     <div class="bottom">
         <img class="img_u8 bottom__logo" src="img/u8_logo.svg" alt="U8" onclick="slideCanvas(0)">
 
-        <div class="bottom__stationInfo">
+        <div class="bottom__stationInfo" id="infoParagraph">
             This station is just beautiful dont you think, so bright, nice and clean; subway stations are just awesome places to reside.
         </div>
     </div>
     </section>
-
+<!-- END PAGE -->
     <section class="end_page">
 
     </section>

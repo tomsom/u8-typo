@@ -1,13 +1,15 @@
 # To Do:
 ## Priority: High
-- change descriptive text
 - landing page and end page
+- fix dot/hr alignment issues
 
 ## Priority: Low
-- js formatting
+- add animation descriptive text
+- dot scale default herrmanstrasse(firefox only)
+- make start by keypress better
 - redo js logic(keyhandler?)
-- design improvements
 - font
-- make link/button spamming possible
+- make 'dynamic' link/button spamming possible
 - mobile compatibility
 - change ylw_bg around
+- maybe sticky u8 logo

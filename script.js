@@ -12,10 +12,12 @@ var slideIndex = 1;
 // canvas
 var canvasIndex = 0;
 
+// var started = false;
+
 
 // dot scale factor
 let dsf = 1.4;
-let dsf_big = 2;
+let dsf_big = 1.7;
 
 // contains all station names
 const station_list_names = [
@@ -45,6 +47,35 @@ const station_list_names = [
   "Wittenau"
 ];
 
+const station_descriptions = [
+  'Die ersten Pläne für den U-Bahnhof Hermannstraße gab es bereits 1910. Aus politischen und finanziellen Gründen wurde die Station erst 86 Jahre später eröffnet. Der U-Bahnhof ist von Felix Scholz, mit dem Thema "Großstadtdschungel" gestaltett',
+  "Die hellgrünen Fliesen geben mit Absicht einen Unruhigen Eindruck. Die Station Leinestraße wurde vor der Hermannstraße eröffnet. Der schon fertige Teil des Tunnels in Richtung Hermannstraße diente als Luftschutzbunker im 2.WK. Wegen Kriegsschäden blieb der Bahnhof für einen Monat geschlossen.",
+  "Der Bahnhof ist nach Hermann Boddin benannt. Er war ein Gemeindevorsteher und Bürgermeister von Rixdorf, dem heutigen Neukölln. Rixdorf hatte einen zweifelhaften Ruf, deshalb wollte Hermann Boddin, Rixdorf in Herrmannstadt umbenennen. Schlussendlich wurde es jedoch Neukölln.",
+  "Die von den Architekten Alfred Grenander und Alfred Fehse entworfene Bahnstation, wurde 1927 eröffnet. ",
+  "Von 1951 bis 1992 hieß der Bahnhof Kottbusser Damm. Umbenannt wurde er nach Johann Lukas Schönlein, dieser war Tuberkuloseforscher im 19. Jh.",
+  "Im August 1940 traf eine Bombe den U-Bahntunnel am Kottbusser Tor, sie detonierte nicht und richtete geringen Schaden an.",
+  'Eigentlich sollte die U8 statt unter den Moritzplatz unter den Oranienplatz führen. Der Bahnhof Oranienplatz wurde fertig gestellt, er befindet sich einige Straßen entfernt und blieb ungenutzt. Gerüchte besagen, dass der Kaufhauskonzern "Wertheim" durch Bestechung dafür gesorgt hat, dass ihre Filiale am Moritzplatz die U8-Anbindung bekommt.',
+  'Der Bahnhof trug zunächst den Namen "Neanderstraße". 1960 wurde dieser und die darüber liegende Straße in Heinrich-Heine-Straße umbenannt. Er war der erste Geisterbahnhof aus südlicher Richtung.',
+  "Nach dem Mauerfall wurde der U-Bahnhof als Grenzübergangsstelle wiedereröffnet. Er hatte eine wichtige Rolle im Grezverkehr.",
+  "Nach dem Bau der Mauer wurden die Zugänge zum Geisterbahnsteig der U8 vermauert. Die gemauerten Stellen wurden mit Bahnhofstypischen Fliesen verkleidet um die Existenz des Bahnsteiges zu kaschieren.",
+  "Die namensgebende Straße hieß erst Weinmeister Gasse. Sie verlief durch den Garten eines Weinmeisters. Weinmeister ist die Berufsbezeichnung für einen Wirt, der Wein ausschenkt, einen Weinhändler oder Winzer. Die Gasse wurde 1810 zur Straße umbenannt.",
+  "Die Wände, des von Alfred Grenander entworfenen Bahnhofs, sind mit orangefarbenen Fliesen verkleidet. Die orangenen Fliesen sind mit einer Uranglasur überzogen, diese sei ungefährlich.(https://www.tagesspiegel.de/berlin/bleibende-werte-1545553.html).",
+  "Der zugemauerte Zugang zum U-Bahnhof Bernauer Straße wurde erst 1990 wieder nach Ostberlin geöffnet. Aus Platzmangel konnte vorher keine Grenzübergansstelle eingerichtet werden.",
+  "Nach dem Mauerbau war der Bahnhof bis 1977 mit dem Gesundbrunnen einer von zwei U-Bahnhöfen nördlich des Ostsektors.",
+  "Bis 1977 war der U-Bahnhof Gesundbrunnen die Endstation der U8 in Richtung Norden. Er wurde im zweiten Weltkrieg als Luftschutzanlage verwendet.",
+  'Die Station wurde als Mehrzweckanlage gebaut. Sie kann als Bürgersteig und im Katastrophenfall als Schutzraum verwendet werden. Der Architekt Rainer G. Rümmler entschied sich beim Stationsschild für die Schauschrift „Octopuss“, von Colin Brignall. Er wollte der Station das Erscheinungsbild der 70er Jahre geben. Warum Pankstraße auf dem Stationsschild mit doppeltem s geschrieben wurde, bleibt ungeklärt .',
+  'Die Hintergleiswände der Station sind mit Norwegischen Fahnen bemalt. Die Schrift des Stationsnamens ist serifenlos, hat eine nahezu gleichmäßige Strichstärke und ähnelt der "Akzidenz Grotesk“, die 1896 von G. Lange entwickelt wurde.',
+  "Der Bahnhof trägt den Namen des SPD-Politikers Franz Neumann. Er war 1946-1958 Vorsitzender, der Berliner SPD und gehörte als Mitglied dem Deutschen Bundestag an.  Die Station wurde 1987 eröffnet. An den Hintergleiswänden sind Bäume dargestellt. Für das Stationsschild wurde eine Groteske Schrift mit nahezu keinem Strichstärkekontrast verwendet.",
+  'Die Wände sind im Farbton vergilbten Papiers gestaltet. Es sind Stadtansichten Berlins aus der Befestigungszeit zu sehen. Für das Stationsschild wurde eine "Windsor"-Schrift verwendet. Sie hat Serifen, unterschiedliche Strichstärken und ist somit eine Antiqua. Die Schrift zeichnet sich durch eine starke Achsenneigung aus. Die Minuskeln der Buchstaben a, h, m und n haben einen abgewinkelten rechten Stamm. Die Versalien P und R haben große Bäuche.',
+  "Der Bahnhof trägt den Namen eines, nahe gelegenen Hallenbades. Den Innenraum des Bahnhofs hat der Architekt Rainer G. Rümmler gestaltet.",
+  'Die Station liegt unter der namensgebenden Lindauer Allee. Die Gestaltung, der 1994 eröffneten Station greift den Stationsnamen auf. Der Architekt Rainer G. Rümmler verwendete eine farbenfrohe Darstellung des Lindenbaumes, angelehnt an das Stadtwappen von Lindau(Bodensee). Es gibt ausschließlich ein modernes Stationsschild, mit der aktuellen Unternehmensschrift der BVG. In allen anderen Bahnhöfen der U8 gibt es ein Stationsschild mit alter Schriftart und eines mit der von Erik Spiekermann entwickelten „FF Transit“.',
+  "Die Wände der Station sind mit roten und hellbraunen Klinkern verkleidet. Sie erinnern an die Klinikbauten der namensgebenden, ehemaligen Nervenklinik. Die Schrift des Stationsnamens ist serifenlos, mit leichtem Strichkontrast.",
+  "Die Hintergleiswände des Bahnhofs sind mit roten Klinkern und Naturstein verkleidet. Die Farbgebung erinnert an das Namensgebende Rathaus Reinickendorf.",
+  "Der U-Bahnhof Wittenau ist die Endstation der U8, in nördlicher Richtung. Der Architekt Rainer G. Rümmler gestaltete die Wände mit grünen und gelben Kacheln. Das Stationsschild ist Monolinear und komplett mit Grotesken Versalien (Großbuchstaben) geschrieben."
+];
+
+const infoParagraph = document.getElementById("infoParagraph");
+
 var anim_going = false;
 
 window.onload = function() {
@@ -52,8 +83,8 @@ window.onload = function() {
   addStationLinks();
   showSlide(1);
   hover(document.getElementById("start"), document.getElementById("img_metro"), "scale_img_metro");
-  // hmm better solution possible??
-  station_links[slideIndex-1].style.setProperty('--dot-scale-factor', dsf_big);
+  // hmm solution possible??
+  station_links[2].style.setProperty('--dot-scale-factor', dsf_big);
 };
 
 function hover(element, target, className){
@@ -62,13 +93,18 @@ function hover(element, target, className){
 }
 
 // keylistener
-document.addEventListener('keyup', (e) => {
+document.addEventListener('keydown', (e) => {
   // slide further/to right
   if (e.code === "ArrowRight"
   || e.code === "Space"
   ||e.code === "Enter"
   || e.code === "KeyL"
   || e.code === "KeyD") {
+    if (canvasIndex == 0) {
+      document.getElementById("img_metro").classList.add("scale_img_metro");
+      slideCanvas(1);
+      return;
+    }
     showSlide(slideIndex + 1);
   }
   // slide backwards/to left
@@ -78,6 +114,8 @@ document.addEventListener('keyup', (e) => {
   || e.code === "KeyJ") {
     showSlide(slideIndex - 1);
   }
+
+  // started = true;
 });
 
 function slideCanvas(n) {
@@ -162,8 +200,19 @@ function addStationLinks() {
 }
 
 function showSlide(index) {
+
   // do not execute if slideshow not visible
+
+  // if (started == false) return;
+
+
+  // if (canvasIndex < 1) {
+  //   slideCanvas(1);
+  //   canvasIndex = 1;
+  // }
+
   if (canvasIndex != 1) return;
+
 
   if (index > image.length) {
     // go to last/credit/about page?
@@ -260,4 +309,12 @@ function showSlide(index) {
     document.body.classList.remove("ylw_bg");
     anim_going = false;
   }, transition_time);
+
+  setInfoText(slideIndex);
+
+}
+
+function setInfoText(slideIndex) {
+  console.log("info: " + infoParagraph);
+  infoParagraph.innerHTML = station_descriptions[slideIndex-1];
 }
