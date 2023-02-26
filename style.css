@@ -172,25 +172,8 @@ h2 {
 }
 .key:not(.empty, .left, .right) {cursor: not-allowed;}
 .right {cursor: pointer;}
-.left:hover, .right:hover {background-color: var(--keypress-bg) !important;}
+.right:hover {background-color: var(--keypress-bg) !important;}
 
-.left {
-    animation: keypress_left 4s 1s infinite;
-}
-
-@keyframes keypress_left {
-    0% {
-
-    }
-    15% {
-        background-color: var(--keypress-bg);
-    }
-
-    20% {
-        background-color: transparent;
-    }
-    
-}
 
 .right {
     animation: keypress_right 4s infinite;
