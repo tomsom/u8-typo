@@ -83,7 +83,9 @@ window.onload = function() {
   addStationLinks();
   showSlide(1);
   hover(document.getElementById("start"), document.getElementById("img_metro"), "scale_img_metro");
-  hover(document.getElementById("arrow_keys"), document.getElementById("img_metro"), "scale_img_metro");// hmm solution possible??
+  hover(document.getElementById("key_right"), document.getElementById("img_metro"), "scale_img_metro");
+  // hover(document.getElementById("key_left"), document.getElementById("img_metro"), "scale_img_metro");
+  // hmm solution possible??
   station_links[2].style.setProperty('--dot-scale-factor', dsf_big);
 };
 

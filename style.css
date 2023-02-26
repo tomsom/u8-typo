@@ -170,9 +170,9 @@ h2 {
     text-align: center;
     transition: all .2s ease-in-out;
 }
-
-.key:not(.empty) {cursor: pointer;}
-.key:not(.empty):hover {background-color: var(--keypress-bg) !important;}
+.key:not(.empty, .left, .right) {cursor: not-allowed;}
+.right {cursor: pointer;}
+.left:hover, .right:hover {background-color: var(--keypress-bg) !important;}
 
 .left {
     animation: keypress_left 4s 1s infinite;
